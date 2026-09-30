@@ -1,0 +1,31 @@
+# Python environment
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# Node.js
+node_modules/
+dist/
+
+# Machine-specific markers & logs
+.setup_done
+.no_database
+.logs/
+logs/
+*.log
+*.pids
+
+# Environment configurations with potential secrets
+.env
+!.env.example
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.idea/
+
+# Auto-configured exclusions
+*.rar
+*.zip

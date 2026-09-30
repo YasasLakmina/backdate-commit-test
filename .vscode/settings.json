@@ -1,0 +1,11 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/ml_light_model",
+    "${workspaceFolder}/ml_service"
+  ],
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/ml_light_model",
+    "${workspaceFolder}/ml_service"
+  ]
+}

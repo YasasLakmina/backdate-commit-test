@@ -1,0 +1,9 @@
+# Tested with Python 3.14.7
+pandas==3.0.6
+pyarrow==26.0.0   # pandas 3 stores text columns with pyarrow; the saved model needs it to load
+numpy==2.5.4
+scikit-learn==1.9.1
+xgboost==3.4.1
+shap==0.54.1
+joblib
+pytest

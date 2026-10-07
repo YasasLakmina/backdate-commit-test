@@ -1,0 +1,5 @@
+Under this scenario ({{ changes | join_list }}), the forecast for {{ target_month }} is {{ scenario }} million kg instead of {{ baseline }} million kg ({{ delta }} million kg, {{ pct }}).
+
+{% if negligible %}The model is barely sensitive to this change; small adjustments to this driver may produce no visible effect.{% elif top_changes %}The change comes mainly from {{ top_changes | join_list }}.{% else %}No single driver group accounts for the change.{% endif %}
+
+This is model sensitivity, not a causal prediction: changing the real-world factor will not necessarily change exports by this amount.{% if cautions %} Caution: {{ cautions | join(' ') }}{% endif %}

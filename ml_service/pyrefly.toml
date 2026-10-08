@@ -1,0 +1,10 @@
+search-path = [
+    ".",
+    "../ml_light_model",
+    ".."
+]
+
+replace-imports-with-any = [
+    "tea_m3",
+    "tea_m3.*"
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "origin_period": "2025-01",
+    "target_period": "2025-02",
+    "forecast_value": 22.1,
+    "model_id": "m1-lite-v0.2.0",
+    "created_at": "2026-10-21T15:31:50.846Z"
+  },
+  {
+    "origin_period": "2025-02",
+    "target_period": "2025-03",
+    "forecast_value": 21.224111300579395,
+    "interval_lower": 18.818815328800596,
+    "interval_upper": 23.955744328961238,
+    "model_id": "m1-lite-v0.2.0",
+    "created_at": "2026-10-20T10:20:28.021Z"
+  },
+  {
+    "origin_period": "2025-03",
+    "target_period": "2025-04",
+    "forecast_value": 20.416111174286222,
+    "interval_lower": 18.010815202507423,
+    "interval_upper": 23.147744202668065,
+    "model_id": "m1-lite-v0.2.0",
+    "created_at": "2026-10-20T12:32:14.934Z"
+  },
+  {
+    "origin_period": "2025-04",
+    "target_period": "2025-05",
+    "forecast_value": 23.162580654072976,
+    "interval_lower": 20.757284682294177,
+    "interval_upper": 25.89421368245482,
+    "model_id": "m1-lite-v0.2.0",
+    "created_at": "2026-10-21T17:21:10.516Z"
+  },
+  {
+    "origin_period": "2025-05",
+    "target_period": "2025-06",
+    "forecast_value": 22.960454837745495,
+    "interval_lower": 20.555158865966696,
+    "interval_upper": 25.692087866127338,
+    "model_id": "m1-lite-v0.2.0",
+    "created_at": "2026-10-21T18:23:09.332Z"
+  }
+]

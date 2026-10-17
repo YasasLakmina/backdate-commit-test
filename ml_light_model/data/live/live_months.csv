@@ -1,0 +1,6 @@
+month,exports_mkg,price_lkr_kg,usd_lkr,rain_mm,oni,bdi,source,entered_by_code,entered_at,bdi_assumed,notes
+2025-01,22.5,1150.0,305.0,220.0,-0.2,2.1,Forbes & Walker Monthly Review / CBSL / NOAA,RESEARCHER,2026-10-20T08:05:35.411725+00:00,True,
+2025-02,25.4,1240.0,307.0,255.0,-0.4,2.3,Sri Lanka Customs Export Statistics / Colombo Tea Traders,BROKER_ANALYST,2026-10-20T09:18:42.945962+00:00,False,Bumper crop across High and Medium elevations with active offshore buyer competition.
+2025-03,25.4,1240.0,307.0,255.0,-0.4,2.3,Sri Lanka Customs Export Statistics / Colombo Tea Traders,BROKER_ANALYST,2026-10-20T10:03:28.125812+00:00,False,Bumper crop across High and Medium elevations with active offshore buyer competition.
+2025-04,25.4,1240.0,307.0,255.0,-0.4,2.3,Sri Lanka Customs Export Statistics / Colombo Tea Traders,BROKER_ANALYST,2026-10-20T12:32:38.701400+00:00,False,Bumper crop across High and Medium elevations with active offshore buyer competition.
+2025-05,25.4,1240.0,307.0,255.0,-0.4,2.3,Sri Lanka Customs Export Statistics / Colombo Tea Traders,BROKER_ANALYST,2026-10-21T17:38:43.795227+00:00,False,Bumper crop across High and Medium elevations with active offshore buyer competition.

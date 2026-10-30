@@ -40,6 +40,15 @@
     "interval_lower": 20.555158865966696,
     "interval_upper": 25.692087866127338,
     "model_id": "m1-lite-v0.2.0",
-    "created_at": "2026-10-21T18:23:09.332Z"
+    "created_at": "2026-10-22T09:32:18.217Z"
+  },
+  {
+    "origin_period": "2025-06",
+    "target_period": "2025-07",
+    "forecast_value": 23.538226649964756,
+    "interval_lower": 21.132930678185957,
+    "interval_upper": 26.2698596783466,
+    "model_id": "m1-lite-v0.2.0",
+    "created_at": "2026-10-22T10:01:14.537Z"
   }
 ]

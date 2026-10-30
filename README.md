@@ -1,32 +1,21 @@
 # AI-Based Decision Support System for Sri Lankan Tea Export Operations
 ### Explainable Artificial Intelligence (XAI) & Operational Decision Support Platform
 
-[![Project Status: Completed](https://img.shields.io/badge/Status-Production--Ready-success.svg?style=for-the-badge)](https://github.com)
-[![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue.svg?style=for-the-badge&logo=python)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688.svg?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
-[![XGBoost](https://img.shields.io/badge/XGBoost-TreeSHAP-EB5424.svg?style=for-the-badge)](https://xgboost.readthedocs.io/)
-[![Node.js 22+](https://img.shields.io/badge/Node.js-22%2B_LTS-339933.svg?style=for-the-badge&logo=node.js)](https://nodejs.org/)
-[![Express.js](https://img.shields.io/badge/Express-4.19-black.svg?style=for-the-badge&logo=express)](https://expressjs.com/)
-[![React 18](https://img.shields.io/badge/React-18.2-61DAFB.svg?style=for-the-badge&logo=react)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-5.2-646CFF.svg?style=for-the-badge&logo=vite)](https://vitejs.dev/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13%2B-4169E1.svg?style=for-the-badge&logo=postgresql)](https://www.postgresql.org/)
-[![Tests Passing](https://img.shields.io/badge/Tests-101%2F101_Passing-brightgreen.svg?style=for-the-badge)](https://github.com)
-
 ---
 
 ## Project Overview
 
 * **Application Domain:** Agricultural Economics, Predictive Forecasting & Decision Intelligence
 * **Primary Scope:** Sri Lankan Tea Export Planning (*Pure Ceylon Tea*)
-* **Architecture:** Decoupled 3-Tier Microservices (React Client, Express API Gateway, Python FastAPI ML Engine)
-* **Core Technologies:** Gradient Boosted Trees (XGBoost), TreeSHAP Explainability, Natural Language Rationale Generation, Rule-Based Governance Engine
+* **Architecture:** Decoupled 3-Tier Architecture (Client Application, Application Gateway, Machine Learning Service)
+* **Core Technologies:** Gradient Boosted Trees (XGBoost), TreeSHAP Attribution Engine, Natural Language Narrative Generator, Deterministic Rules Engine
 
 ---
 
 ## Table of Contents
 
 - [1. Executive Summary](#1-executive-summary)
-- [2. Industry Challenge & Motivation](#2-industry-challenge--motivation)
+- [2. Industry Challenge & Operational Context](#2-industry-challenge--operational-context)
 - [3. System Architecture](#3-system-architecture)
   - [3.1 High-Level Architecture](#31-high-level-architecture)
   - [3.2 Data Flow & Processing Pipeline](#32-data-flow--processing-pipeline)
@@ -59,174 +48,142 @@
 
 ## 1. Executive Summary
 
-The **AI-Based Decision Support System for Sri Lankan Tea Export Operations** is an enterprise-grade analytical platform that bridges the gap between machine learning models and real-world operational decision-making in the tea export sector.
+The **AI-Based Decision Support System for Sri Lankan Tea Export Operations** is an analytical software platform designed to convert complex predictive machine learning forecasts into transparent, actionable intelligence for commercial tea exporters, brokers, and trade analysts.
 
-Traditional machine learning algorithms frequently operate as opaque black boxes, delivering raw numerical predictions without explaining the underlying economic or climatic drivers. In volatile commodity markets, commercial exporters and policy planners cannot risk commitments based solely on numbers.
+In global commodity trading, standalone numerical forecasts are insufficient. Decision-makers must understand *why* a forecast changed, *which* economic or environmental variables drove that movement, and *how* hypothetical market changes could affect export volumes.
 
-This platform resolves this challenge by providing:
-1. **Explainable AI (TreeSHAP):** Decomposes every forecast into transparent contributions across seven business driver groups (exchange rates, auction prices, rainfall anomalies, buyer demand).
-2. **Automated Business Narratives:** Translates mathematical attribution values into readable, deterministic executive summaries.
-3. **Interactive What-If Simulation:** Enables planners to stress-test scenarios (e.g., currency movements or rainfall shortages) within historical safety guardrails.
-4. **Target Goal-Seek Engine:** Calculates the exact operational adjustments required to achieve specific export volume targets.
-5. **Operational Decision Rules:** Evaluates 15 risk triggers (unusual market conditions, wide intervals, conflicting signals) to guide export logistics and procurement.
-6. **Continuous Ingestion:** Ingests live monthly data with strict continuity and bounds validation while logging historical model accuracy over time.
+This platform addresses these requirements through four core innovations:
+1. **Explainable AI (TreeSHAP):** Decomposes every month-ahead prediction into exact quantitative contributions across seven business driver groups.
+2. **Deterministic Business Narratives:** Automatically translates mathematical attribution values into concise, human-readable executive summaries.
+3. **Interactive Scenario Simulation & Goal-Seek:** Enables planners to test counterfactual scenarios (e.g., currency movements or rainfall anomalies) within historical safety guardrails.
+4. **Operational Decision Rules Engine:** Evaluates 15 risk triggers (unusual market states, wide intervals, conflicting signals) to guide operational planning.
 
 ---
 
-## 2. Industry Challenge & Motivation
+## 2. Industry Challenge & Operational Context
 
-Sri Lankan tea (*Pure Ceylon Tea*) is a vital pillar of the national economy, generating substantial foreign exchange revenue. However, export planning is vulnerable to multiple external shocks:
+Sri Lankan tea (*Pure Ceylon Tea*) is an essential foreign exchange earner. However, export logistics and auction commitments are vulnerable to volatile external influences:
 
-* **Currency Fluctuations:** Swings in the USD/LKR exchange rate directly affect international bidding power and exporter margins.
-* **Weather & Climate Variations:** Monsoons, seasonal dry spells, and Oceanic Niño Index (ONI) cycles directly impact high, medium, and low-elevation harvest volumes.
-* **Macroeconomic Shocks:** Fertilizer price spikes, trade route bottlenecks, and global commodity inflation create non-linear market shifts.
+| Macro Dimension | Key Indicators Monitored | Operational Impact on Tea Exports |
+|---|---|---|
+| **Climate & Agro-Weather** | Western & Southern elevation rainfall (mm), Oceanic Niño Index (ONI / ENSO) | Regulates green leaf harvest flush, plantation crop volumes, and seasonal leaf quality. |
+| **Macroeconomics & Foreign Exchange** | USD/LKR exchange rate spot & 3-month momentum, global fertilizer price index | Governs international price competitiveness, exporter buying margins, and plantation production costs. |
+| **Auction Dynamics & Demand** | Colombo Tea Auction hammer prices (LKR/kg), Global Buyer Demand Index (BDI) | Influences lot clearance rates, trade partner purchasing capacity, and exporter inventory turnover. |
+| **Operational & Strategic Planning** | Historical export momentum, trade route bottlenecks, warehouse holding limits | Determines forward shipping schedules, contract delivery commitments, and inventory holding risk. |
 
-```mermaid
-mindmap
-  root((Tea Export Volatility))
-    Climate & Weather
-      Rainfall anomalies (mm)
-      Oceanic Niño Index (ENSO / ONI)
-      Elevation-specific green leaf yield
-    Macroeconomics & FX
-      USD / LKR exchange rate movements
-      Global fertilizer price index
-      International Buyer Demand Index (BDI)
-    Auction & Market Dynamics
-      Colombo Tea Auction prices (LKR/kg)
-      Auction lot clearance rates
-      Inventory carryover levels
-    Operational Challenges
-      Black-box forecasting opacity
-      Lack of interactive scenario planning
-      Need for policy and risk guardrails
-```
+### The Value of Explainability in Export Planning
+When a conventional machine learning model outputs a prediction such as `23.4 million kg`, planners must understand:
+* *Which market factors are primarily driving this projection?*
+* *Is the expected volume driven by domestic harvest conditions, currency movements, or international demand?*
+* *What is the projected volume if shipping costs increase or rainfall drops?*
+* *How should the business respond if current market conditions have no historical precedent?*
 
-### The Need for Explainable AI
-When an algorithm outputs a standalone prediction such as `23.4 million kg`, planners are left with critical unanswered questions:
-* *Which market factors are driving this change?*
-* *Is the projected growth driven by agricultural yield, currency shifts, or global demand?*
-* *What is the forecast impact if shipping freight rates rise or rainfall drops?*
-* *How should operations respond if market conditions have no historical precedent?*
-
-This platform provides the tools to answer these questions with full mathematical rigor.
+This system provides the analytical tools to answer these questions with full mathematical verification.
 
 ---
 
 ## 3. System Architecture
 
-The platform uses a decoupled microservices architecture designed for resilience, modular development, and zero-configuration operation.
+The platform uses a decoupled three-tier architecture designed for performance, modularity, and fail-safe operation.
 
 ### 3.1 High-Level Architecture
 
 ```mermaid
-graph TB
-    subgraph Client ["Client Layer (React 18 + Vite)"]
-        UI_Nav["Navigation & Service Health Badges"]
-        UI_Forecast["Forecast Summary & Confidence Intervals"]
-        UI_Chart["Interactive SHAP Driver Chart"]
-        UI_Narrative["Natural Language Rationale Panel"]
-        UI_Simulator["What-If Counterfactual Simulator"]
-        UI_GoalSeek["Goal-Seek Target Planner"]
-        UI_Rules["Operational Decision Prompts"]
-        UI_Live["Live Data Ingestion & Track Record"]
+flowchart TD
+    subgraph UI ["1. Presentation Layer (React 18 & Vite Dashboard)"]
+        direction TB
+        subgraph Views ["Dashboard Views"]
+            V1["Forecast Summary & Interval Cards"]
+            V2["SHAP Driver Impact Charts"]
+            V3["Automated Rationale Summaries"]
+        end
+        subgraph Tools ["Operational Decision Tools"]
+            T1["What-If Scenario Simulator"]
+            T2["Target Goal-Seek Optimizer"]
+            T3["Operational Rule Advisories"]
+            T4["Live Ingestion & Model Track Record"]
+        end
     end
 
-    subgraph Backend ["Application Gateway Layer (Node.js Express)"]
+    subgraph API ["2. Application Gateway Layer (Node.js & Express)"]
+        direction TB
         Gateway["Express API Gateway (:4000)"]
-        Rules["Deterministic Rules Engine (15 Rules)"]
-        Storage_Mgr["Storage Manager (PostgreSQL + Local Fallback)"]
-        Postgres[("PostgreSQL Database\n(Reviews & Audit Logs)")]
-        LocalStore[("Local File Store\n(JSON & CSV Fallback)")]
+        RulesEngine["Decision Rules Engine\n(15 Operational Policies)"]
+        DataRouter{"Storage Router"}
+        
+        Gateway --> RulesEngine
+        Gateway --> DataRouter
     end
 
-    subgraph ML ["Machine Learning & XAI Layer (Python FastAPI)"]
-        ML_API["FastAPI Microservice (:8001)"]
-        Cache["In-Memory Model & Feature Cache"]
-        Model["Hybrid Forecaster\n(XGBoost + Temporal Trend)"]
-        SHAP["TreeSHAP Attribution Engine"]
-        Jinja["Deterministic Narrative Engine"]
-        Outlier["Mahalanobis Distance Validator"]
+    subgraph Storage ["Storage Layer"]
+        DB[("PostgreSQL Database\n(Audits & Rule Reviews)")]
+        FileStore[("Local Fallback Store\n(JSON & CSV Files)")]
+        DataRouter -->|When Available| DB
+        DataRouter -->|Fallback Mode| FileStore
     end
 
-    subgraph Storage ["Dataset & Model Artifacts"]
-        Data_Raw["Historical Dataset (2000-2024)"]
-        Data_Live["Live Extension Store (2025+)"]
-        Model_Weights["Serialized Weights (.pkl / .joblib)"]
+    subgraph ML ["3. Machine Learning & XAI Engine (Python & FastAPI)"]
+        direction TB
+        MLService["FastAPI Microservice (:8001)"]
+        
+        subgraph Pipeline ["Inference & Explainability Core"]
+            Forecaster["Hybrid Forecaster\n(XGBoost Ensemble + Temporal Trend)"]
+            TreeSHAP["TreeSHAP Engine\n(Additive Attribution Verification)"]
+            Narrative["Narrative Generator\n(Domain Template Engine)"]
+        end
+
+        MLService --> Forecaster
+        Forecaster --> TreeSHAP
+        TreeSHAP --> Narrative
     end
 
-    %% Interactions
-    Client <-->|REST API / JSON| Gateway
-    Gateway <-->|HTTP Proxy / REST| ML_API
-    Gateway --> Rules
-    Gateway --> Storage_Mgr
-
-    Storage_Mgr -.->|When Connected| Postgres
-    Storage_Mgr -.->|Fallback / Zero-DB| LocalStore
-
-    ML_API --> Cache
-    Cache --> Model
-    Model --> SHAP
-    Model --> Jinja
-    Model --> Outlier
-
-    Model -.-> Model_Weights
-    Model -.-> Data_Raw
-    Model -.-> Data_Live
-
-    classDef cLayer fill:#e3f2fd,stroke:#1565c0,stroke-width:2px;
-    classDef bLayer fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px;
-    classDef mLayer fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
-    classDef sLayer fill:#fff3e0,stroke:#e65100,stroke-width:2px;
-
-    class UI_Nav,UI_Forecast,UI_Chart,UI_Narrative,UI_Simulator,UI_GoalSeek,UI_Rules,UI_Live cLayer;
-    class Gateway,Rules,Storage_Mgr,Postgres,LocalStore bLayer;
-    class ML_API,Cache,Model,SHAP,Jinja,Outlier mLayer;
-    class Data_Raw,Data_Live,Model_Weights sLayer;
+    %% Cross-layer communication
+    UI <==>|REST API / JSON| Gateway
+    Gateway <==>|HTTP Service Calls| MLService
 ```
 
 ---
 
 ### 3.2 Data Flow & Processing Pipeline
 
-The following sequence diagram illustrates the coordinated workflow when generating an explained forecast or evaluating an interactive scenario:
+The following sequence illustrates the coordinated data processing pipeline when an analyst selects a month or simulates a counterfactual scenario:
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor User as Operational Planner
+    actor User as Export Planner
     participant Web as Web Dashboard (React)
     participant Gateway as API Gateway (Express)
     participant ML as ML Service (FastAPI)
     participant Engine as Model & TreeSHAP
-    participant DB as Storage (Database / File)
+    participant Storage as Persistence Layer
 
-    User->>Web: Select origin month or adjust scenario slider
+    User->>Web: Select target month or adjust scenario slider
     Web->>Gateway: GET /api/explain?origin=YYYY-MM
-    Gateway->>ML: GET /explain?origin=YYYY-MM
-    ML->>Engine: Run hybrid forecast & compute TreeSHAP values
-    Engine-->>ML: Return prediction, feature values, and raw attributions
-    ML->>ML: Aggregate features into 7 business driver groups
-    ML->>ML: Render natural language business narrative
+    Gateway->>ML: Forward parameters to ML service
+    ML->>Engine: Run forecast and compute TreeSHAP feature values
+    Engine-->>ML: Return prediction, baseline, and feature attributions
+    ML->>ML: Group low-level features into 7 business drivers
+    ML->>ML: Generate natural language business summary
     ML-->>Gateway: Return forecast, intervals, SHAP values, and narrative
-    Gateway->>Gateway: Evaluate 15 decision rules against calibration thresholds
-    Gateway->>DB: Log session run and parameters
-    Gateway-->>Web: Return combined payload (Forecast + Explanations + Rules)
-    Web->>User: Display visual charts, narrative, and operational advice
+    Gateway->>Gateway: Evaluate 15 decision rules against operational thresholds
+    Gateway->>Storage: Log analysis run and parameters
+    Gateway-->>Web: Return combined payload
+    Web->>User: Display visual charts, narrative, and advisory notices
 ```
 
 ---
 
 ### 3.3 Mathematical Formulation & Attribution Identity
 
-The primary forecaster implements a hybrid blend combining non-linear gradient-boosted decision trees with a parametric temporal trend model:
+The primary forecasting engine combines non-linear gradient-boosted decision trees with a parametric temporal trend model:
 
 $$\hat{y}_{t+1} = (1 - w) \cdot \hat{y}_{\text{XGB}} + w \cdot \hat{y}_{\text{temporal}}$$
 
 Where:
-* $w = 0.7$ is the fixed blend weight determined via walk-forward cross-validation.
-* $\hat{y}_{\text{XGB}}$ represents the output of 100 shallow XGBoost trees (max depth 3, learning rate 0.05).
-* $\hat{y}_{\text{temporal}}$ captures underlying structural trend and annual seasonality.
+* $w = 0.7$ is the fixed blend weight determined via walk-forward validation.
+* $\hat{y}_{\text{XGB}}$ represents the prediction of 100 shallow XGBoost decision trees (maximum depth 3, learning rate 0.05).
+* $\hat{y}_{\text{temporal}}$ captures long-term structural momentum and annual seasonality.
 
 #### Exact TreeSHAP Reconciliation
 Using the TreeSHAP algorithm, the non-linear XGBoost prediction is decomposed into additive feature contributions $\phi_i$:
@@ -240,7 +197,7 @@ $$\text{Forecast} = \underbrace{(1 - w) \cdot \phi_0}_{\text{Adjusted Base Value
 This guarantees:
 $$\left| \text{Forecast} - \left( (1 - w)\phi_0 + \sum_{i=1}^M (1 - w)\phi_i + w \cdot \hat{y}_{\text{temporal}} \right) \right| < 10^{-5} \text{ mn kg}$$
 
-Every forecast is verified against this identity to ensure zero mathematical leakage.
+Every forecast is verified against this identity during inference to guarantee zero mathematical discrepancy between visual charts and numerical outputs.
 
 ---
 
@@ -323,18 +280,16 @@ The system continuously evaluates 15 deterministic business rules grouped into f
 
 ### 4.6 Continuous Live Operations & Tracking
 
-The platform supports ongoing operations for current and future months (2025+):
+The platform supports ongoing operations for current and future months:
 
 ```mermaid
-stateDiagram-v2
-    [*] --> IngestData: Input New Month Records
-    IngestData --> ValidateTimeline: Check Bounds & Time Continuity
-    ValidateTimeline --> InputError: Missing Month / Invalid Value
-    InputError --> IngestData: Prompt Correction
-    ValidateTimeline --> StoreRecord: Continuity & Bounds Confirmed
-    StoreRecord --> GenerateForecast: Append Month & Run Forward Prediction
-    GenerateForecast --> TrackRecord: Store Forecast vs Realized Outcome
-    TrackRecord --> [*]: Update Rolling Out-of-Sample Accuracy
+flowchart TD
+    Step1["1. Enter Monthly Indicators\n(Export Volume, Auction Prices, Rainfall, FX)"] --> Step2{"2. Bounds & Continuity Validation\n(Are values valid? Is timeline unbroken?)"}
+    Step2 -- "Invalid / Timeline Gap" --> Error["Validation Error\nPrompt user for sequential correction"]
+    Error --> Step1
+    Step2 -- "Valid & Sequential" --> Step3["3. Ingestion & Persistence\nAppend to live dataset"]
+    Step3 --> Step4["4. Real-Time Forward Inference\nGenerate prediction for next calendar month"]
+    Step4 --> Step5["5. Model Track-Record Logging\nTrack forecast versus realized actuals over time"]
 ```
 
 * **Timeline Continuity:** Time-series lag calculations require unbroken historical sequences. The ingestion module enforces sequential consistency (e.g., month `2025-02` cannot be added unless `2025-01` is present).
@@ -350,8 +305,8 @@ The application includes an automated persistence fallback to ensure seamless lo
 flowchart LR
     API[Application Backend]
     Check{Database\nAvailable?}
-    PG[(PostgreSQL Database\nPool)]
-    Local[(Local File Storage\nCSV & JSON)]
+    PG[(PostgreSQL Database\nConnection Pool)]
+    Local[(Local File Storage\nCSV & JSON Fallback)]
 
     API --> Check
     Check -- Yes --> PG
@@ -611,15 +566,15 @@ python scripts/evaluate_explanations.py
 
 ## 9. Quality Assurance & Automated Testing
 
-The codebase includes automated test suites covering data integrity, algorithmic constraints, API contracts, and user interface builds:
+The platform includes 101 automated tests ensuring continuous algorithmic reliability, data security, and interface stability:
 
-```mermaid
-pie title Automated Test Distribution (101 Total Tests)
-    "Machine Learning & Data Leakage Tests" : 35
-    "Backend & Integration Tests" : 30
-    "XAI Consistency & Stability Tests" : 20
-    "Contract & Live Ingestion Tests" : 16
-```
+| Test Suite Category | Test Count | Scope & Verification Invariants |
+|---|---|---|
+| **ML Pipeline & Leakage Tests** | **35** | Verifies zero lookahead leakage ($t$ strictly isolated from $t+1$), feature calculation stability, and model contracts. |
+| **Backend & Integration Tests** | **30** | Tests Express routes, HTTP error handling, request parameter validations, and live forecast store reliability. |
+| **XAI Consistency & Stability** | **20** | Confirms exact TreeSHAP additivity ($<10^{-5}$ error), driver sign agreement, and narrative stability. |
+| **Live Ingestion & Data Contracts** | **16** | Enforces physical bounds validation, chronological continuity (no missing months), and rollback safety. |
+| **Total Test Suite** | **101** | **All 101 unit and integration tests passing.** |
 
 ### Running Test Suites:
 

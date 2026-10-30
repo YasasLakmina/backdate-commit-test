@@ -1,7 +1,7 @@
 # AI-Based Decision Support System for Sri Lankan Tea Export Operations
-### Component M3: Explainable AI (XAI) & Decision Support System
+### Explainable Artificial Intelligence (XAI) & Operational Decision Support Platform
 
-[![Project Status: Completed](https://img.shields.io/badge/Status-Completed-success.svg?style=for-the-badge)](https://github.com/YasasLakmina/backdate-commit-test)
+[![Project Status: Completed](https://img.shields.io/badge/Status-Production--Ready-success.svg?style=for-the-badge)](https://github.com)
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue.svg?style=for-the-badge&logo=python)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688.svg?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
 [![XGBoost](https://img.shields.io/badge/XGBoost-TreeSHAP-EB5424.svg?style=for-the-badge)](https://xgboost.readthedocs.io/)
@@ -10,616 +10,576 @@
 [![React 18](https://img.shields.io/badge/React-18.2-61DAFB.svg?style=for-the-badge&logo=react)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-5.2-646CFF.svg?style=for-the-badge&logo=vite)](https://vitejs.dev/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13%2B-4169E1.svg?style=for-the-badge&logo=postgresql)](https://www.postgresql.org/)
-[![Tests Passing](https://img.shields.io/badge/Tests-101%2F101_Passing-brightgreen.svg?style=for-the-badge)](https://github.com/YasasLakmina/backdate-commit-test)
+[![Tests Passing](https://img.shields.io/badge/Tests-101%2F101_Passing-brightgreen.svg?style=for-the-badge)](https://github.com)
 
 ---
 
-## Academic Context & Attribution
+## Project Overview
 
-* **Institution:** Sri Lanka Institute of Information Technology (SLIIT)
-* **Faculty:** Faculty of Computing / Department of Information Technology
-* **Module:** IT4010 - Comprehensive Capstone Research Project (2026)
-* **Project ID:** J26-IT-423
-* **Lead Researcher / Student:** D S T W Dassanayake (IT23293076 / Yasas Lakmina)
-* **Deliverable Component:** **Component M3: Explainable AI & Decision Support System**
-* **Companion Subsystem:** **M1-lite Stand-in Forecaster** (High-fidelity, lag-safe XGBoost + Temporal blend forecaster)
+* **Application Domain:** Agricultural Economics, Predictive Forecasting & Decision Intelligence
+* **Primary Scope:** Sri Lankan Tea Export Planning (*Pure Ceylon Tea*)
+* **Architecture:** Decoupled 3-Tier Microservices (React Client, Express API Gateway, Python FastAPI ML Engine)
+* **Core Technologies:** Gradient Boosted Trees (XGBoost), TreeSHAP Explainability, Natural Language Rationale Generation, Rule-Based Governance Engine
 
 ---
 
 ## Table of Contents
 
 - [1. Executive Summary](#1-executive-summary)
-- [2. The Domain Challenge & Motivation](#2-the-domain-challenge--motivation)
-- [3. End-to-End System Architecture](#3-end-to-end-system-architecture)
-  - [3.1 High-Level 3-Tier Architecture](#31-high-level-3-tier-architecture)
-  - [3.2 Data Flow & Inference Pipeline](#32-data-flow--inference-pipeline)
-  - [3.3 Mathematical Formulation & SHAP Additivity](#33-mathematical-formulation--shap-additivity)
-- [4. Core Subsystems & Innovations](#4-core-subsystems--innovations)
-  - [4.1 Explainable AI Engine (TreeSHAP + 7 Driver Groups)](#41-explainable-ai-engine-treeshap--7-driver-groups)
+- [2. Industry Challenge & Motivation](#2-industry-challenge--motivation)
+- [3. System Architecture](#3-system-architecture)
+  - [3.1 High-Level Architecture](#31-high-level-architecture)
+  - [3.2 Data Flow & Processing Pipeline](#32-data-flow--processing-pipeline)
+  - [3.3 Mathematical Formulation & Attribution Identity](#33-mathematical-formulation--attribution-identity)
+- [4. Core Platform Capabilities](#4-core-platform-capabilities)
+  - [4.1 Explainable AI with TreeSHAP](#41-explainable-ai-with-treeshap)
   - [4.2 Natural Language Business Rationale](#42-natural-language-business-rationale)
   - [4.3 Counterfactual What-If Scenario Simulator](#43-counterfactual-what-if-scenario-simulator)
-  - [4.4 Target Goal-Seek Optimizer](#44-target-goal-seek-optimizer)
-  - [4.5 Business Decision Rules Catalogue (15 Rules)](#45-business-decision-rules-catalogue-15-rules)
-  - [4.6 Continuous Live Operations & Model Track Record](#46-continuous-live-operations--model-track-record)
+  - [4.4 Target Goal-Seek Optimization](#44-target-goal-seek-optimization)
+  - [4.5 Domain Decision Rules & Governance (15 Rules)](#45-domain-decision-rules--governance-15-rules)
+  - [4.6 Continuous Live Operations & Tracking](#46-continuous-live-operations--tracking)
   - [4.7 Dual-Mode Persistence Architecture](#47-dual-mode-persistence-architecture)
 - [5. Machine Learning Benchmarks & Evaluation](#5-machine-learning-benchmarks--evaluation)
-  - [5.1 Dataset Specifications & Quality Assurance](#51-dataset-specifications--quality-assurance)
+  - [5.1 Dataset Specifications & Preprocessing](#51-dataset-specifications--preprocessing)
   - [5.2 Walk-Forward Expanding Window Evaluation](#52-walk-forward-expanding-window-evaluation)
-  - [5.3 Explanation Faithfulness & Stability Metrics](#53-explanation-faithfulness--stability-metrics)
-- [6. Repository File Structure](#6-repository-file-structure)
+  - [5.3 Explanation Consistency & Stability](#53-explanation-consistency--stability)
+- [6. Repository Directory Structure](#6-repository-directory-structure)
 - [7. Installation & Quickstart](#7-installation--quickstart)
-  - [7.1 One-Click Windows Setup (Recommended)](#71-one-click-windows-setup-recommended)
-  - [7.2 Manual Multi-Service Setup](#72-manual-multi-service-setup)
+  - [7.1 Prerequisites](#71-prerequisites)
+  - [7.2 Service Setup & Execution](#72-service-setup--execution)
+  - [7.3 Model Retraining & Evaluation](#73-model-retraining--evaluation)
 - [8. REST API Reference](#8-rest-api-reference)
-  - [8.1 ML Service (FastAPI - Port 8001)](#81-ml-service-fastapi---port-8001)
-  - [8.2 Orchestration Backend (Express - Port 4000)](#82-orchestration-backend-express---port-4000)
-- [9. Testing & Quality Assurance](#9-testing--quality-assurance)
-- [10. Viva Presentation & Demonstration Walkthrough](#10-viva-presentation--demonstration-walkthrough)
-- [11. Research Limitations & Governance](#11-research-limitations--governance)
-- [12. License & Disclaimers](#12-license--disclaimers)
+  - [8.1 Machine Learning Service (FastAPI - Port 8001)](#81-machine-learning-service-fastapi---port-8001)
+  - [8.2 Application Gateway Backend (Express - Port 4000)](#82-application-gateway-backend-express---port-4000)
+- [9. Quality Assurance & Automated Testing](#9-quality-assurance--automated-testing)
+- [10. Technical Limitations & Disclosures](#10-technical-limitations--disclosures)
+- [11. License & Usage Terms](#11-license--usage-terms)
 
 ---
 
 ## 1. Executive Summary
 
-The **AI-Based Decision Support System for Sri Lankan Tea Export Operations** (Component M3) transforms black-box machine learning predictions into **auditable, actionable, and transparent intelligence** for Colombo tea auction brokers, exporters, and government policy planners.
+The **AI-Based Decision Support System for Sri Lankan Tea Export Operations** is an enterprise-grade analytical platform that bridges the gap between machine learning models and real-world operational decision-making in the tea export sector.
 
-While automated algorithms can predict month-ahead national export volumes, operational decision-makers consistently reject purely numerical predictions due to lack of causal justification, unpredictable market swings (currency devaluations, freight disruptions, monsoonal weather), and absent policy constraints. 
+Traditional machine learning algorithms frequently operate as opaque black boxes, delivering raw numerical predictions without explaining the underlying economic or climatic drivers. In volatile commodity markets, commercial exporters and policy planners cannot risk commitments based solely on numbers.
 
-This project bridges that gap by deploying a complete, production-grade 3-tier architecture:
-1. **Explainable AI Engine:** Computes exact TreeSHAP feature attributions, mathematically guaranteed to reconcile against an XGBoost + Temporal blend forecaster.
-2. **Deterministic Rationale Generator:** Transforms raw attribution tensors into clear, domain-specific English explanations.
-3. **Interactive Counterfactual Simulator:** Allows decision-makers to test "what-if" macroeconomic scenarios bounded by historical 5th–95th percentile guardrails.
-4. **Target Goal-Seek Engine:** Employs parameter space search to find exact operational conditions required to meet volume targets.
-5. **15-Rule Decision Catalogue:** Evaluates operational risks (volatility, interval width, input anomalies, outlier combinations) and provides soft advisory prompts governed by expert review workflows.
-6. **Live Ingestion & Out-of-Sample Track Record:** Enables real-time forward operation for 2025+ with physical bounds validation and automated forecast verification.
+This platform resolves this challenge by providing:
+1. **Explainable AI (TreeSHAP):** Decomposes every forecast into transparent contributions across seven business driver groups (exchange rates, auction prices, rainfall anomalies, buyer demand).
+2. **Automated Business Narratives:** Translates mathematical attribution values into readable, deterministic executive summaries.
+3. **Interactive What-If Simulation:** Enables planners to stress-test scenarios (e.g., currency movements or rainfall shortages) within historical safety guardrails.
+4. **Target Goal-Seek Engine:** Calculates the exact operational adjustments required to achieve specific export volume targets.
+5. **Operational Decision Rules:** Evaluates 15 risk triggers (unusual market conditions, wide intervals, conflicting signals) to guide export logistics and procurement.
+6. **Continuous Ingestion:** Ingests live monthly data with strict continuity and bounds validation while logging historical model accuracy over time.
 
 ---
 
-## 2. The Domain Challenge & Motivation
+## 2. Industry Challenge & Motivation
 
-Sri Lankan tea (*Pure Ceylon Tea*) accounts for a significant portion of national agricultural export revenue and supports hundreds of thousands of livelihoods across plantation communities. However, tea export planning is burdened by severe external volatility:
+Sri Lankan tea (*Pure Ceylon Tea*) is a vital pillar of the national economy, generating substantial foreign exchange revenue. However, export planning is vulnerable to multiple external shocks:
 
-* **Currency Volatility:** Drastic fluctuations in the LKR/USD exchange rate alter auction bidding power and exporter profit margins.
-* **Agro-Climatic Shocks:** Monsoons, prolonged droughts, and Oceanic Niño Index (ONI) cycles directly alter high, medium, and low-elevation green leaf yields.
-* **Geopolitical & Freight Disruptions:** Sanctions, Middle East trade route bottlenecks, and sudden fertilizer import restrictions induce structural market regime shifts.
+* **Currency Fluctuations:** Swings in the USD/LKR exchange rate directly affect international bidding power and exporter margins.
+* **Weather & Climate Variations:** Monsoons, seasonal dry spells, and Oceanic Niño Index (ONI) cycles directly impact high, medium, and low-elevation harvest volumes.
+* **Macroeconomic Shocks:** Fertilizer price spikes, trade route bottlenecks, and global commodity inflation create non-linear market shifts.
 
 ```mermaid
 mindmap
-  root((Ceylon Tea Export Volatility))
-    Agro-Climatic Drivers
+  root((Tea Export Volatility))
+    Climate & Weather
       Rainfall anomalies (mm)
-      ENSO / ONI sea surface anomalies
-      Elevation-specific leaf flush
-    Macroeconomic Drivers
-      USD/LKR exchange rate swings
+      Oceanic Niño Index (ENSO / ONI)
+      Elevation-specific green leaf yield
+    Macroeconomics & FX
+      USD / LKR exchange rate movements
       Global fertilizer price index
-      Global Buyer Demand Index (BDI)
+      International Buyer Demand Index (BDI)
     Auction & Market Dynamics
       Colombo Tea Auction prices (LKR/kg)
       Auction lot clearance rates
-      Inventory carryover volumes
-    Operational Bottlenecks
-      Black-box AI opacity
-      Lack of counterfactual planning
-      Absence of policy compliance audits
+      Inventory carryover levels
+    Operational Challenges
+      Black-box forecasting opacity
+      Lack of interactive scenario planning
+      Need for policy and risk guardrails
 ```
 
-### The Black-Box Dilemma
-Previous research focused almost exclusively on optimizing raw point accuracy (minimizing RMSE or MAPE) using complex Deep Learning (LSTM, GRU, Transformers) or tree ensembles. When presented with a raw forecast such as `23.4 million kg`, export planners cannot determine:
-1. *Which market variables drove this prediction up or down?*
-2. *Is this rise driven by domestic leaf yield, currency depreciation, or global buyer demand?*
-3. *What happens to export volume if shipping freight rates spike by 15% or rainfall drops by 50 mm?*
-4. *Can we trust this prediction when market conditions have no precedent in historical data?*
+### The Need for Explainable AI
+When an algorithm outputs a standalone prediction such as `23.4 million kg`, planners are left with critical unanswered questions:
+* *Which market factors are driving this change?*
+* *Is the projected growth driven by agricultural yield, currency shifts, or global demand?*
+* *What is the forecast impact if shipping freight rates rise or rainfall drops?*
+* *How should operations respond if market conditions have no historical precedent?*
 
-Component M3 resolves these issues by delivering an end-to-end, auditable decision interface.
+This platform provides the tools to answer these questions with full mathematical rigor.
 
 ---
 
-## 3. End-to-End System Architecture
+## 3. System Architecture
 
-The solution operates as a decoupled microservices architecture designed for high throughput, fail-safe isolation, and zero-configuration demonstration.
+The platform uses a decoupled microservices architecture designed for resilience, modular development, and zero-configuration operation.
 
-### 3.1 High-Level 3-Tier Architecture
+### 3.1 High-Level Architecture
 
 ```mermaid
 graph TB
-    subgraph Tier1 ["Tier 1: Interactive Client Layer (React 18 + Vite)"]
-        UI_Nav["Sidebar Navigation & Status Badges"]
-        UI_Overview["Forecast Overview & Confidence Interval"]
-        UI_Drivers["SHAP Driver Impact Waterfall / Bar Chart"]
-        UI_Rationale["Natural Language Business Rationale"]
-        UI_WhatIf["Interactive Counterfactual Scenario Sliders"]
-        UI_GoalSeek["Target Volume Goal-Seek Planner"]
-        UI_Rules["15 Decision Prompts & Evidence Modals"]
-        UI_Live["Live Month Ingestion & Track-Record"]
+    subgraph Client ["Client Layer (React 18 + Vite)"]
+        UI_Nav["Navigation & Service Health Badges"]
+        UI_Forecast["Forecast Summary & Confidence Intervals"]
+        UI_Chart["Interactive SHAP Driver Chart"]
+        UI_Narrative["Natural Language Rationale Panel"]
+        UI_Simulator["What-If Counterfactual Simulator"]
+        UI_GoalSeek["Goal-Seek Target Planner"]
+        UI_Rules["Operational Decision Prompts"]
+        UI_Live["Live Data Ingestion & Track Record"]
     end
 
-    subgraph Tier2 ["Tier 2: Orchestration & Governance Layer (Node.js Express)"]
-        API_Gateway["Express API Gateway (Port 4000)"]
-        Rules_Engine["Deterministic Rules Engine (15 Rules Catalogue)"]
-        Store_Fallback["Live Forecast JSON Store (Zero-DB Mode)"]
-        DB_Repo["PostgreSQL Repository Layer"]
-        PG_DB[("PostgreSQL 13+ Database\n(Rules, Reviews, Study Logs)")]
+    subgraph Backend ["Application Gateway Layer (Node.js Express)"]
+        Gateway["Express API Gateway (:4000)"]
+        Rules["Deterministic Rules Engine (15 Rules)"]
+        Storage_Mgr["Storage Manager (PostgreSQL + Local Fallback)"]
+        Postgres[("PostgreSQL Database\n(Reviews & Audit Logs)")]
+        LocalStore[("Local File Store\n(JSON & CSV Fallback)")]
     end
 
-    subgraph Tier3 ["Tier 3: Machine Learning & XAI Layer (Python FastAPI)"]
-        ML_API["FastAPI Microservice (Port 8001)"]
-        Model_Cache["In-Memory Model & Preprocessor Cache"]
-        M1_Lite["M1-Lite Stand-in Forecaster\n(100 Shallow XGBoost Trees + Linear Trend)"]
-        TreeSHAP["TreeSHAP Explainer (Exact Additivity Engine)"]
-        Rationale_Engine["Jinja2 Business Narrative Engine"]
-        Mahalanobis["Mahalanobis Distance Outlier Detector"]
+    subgraph ML ["Machine Learning & XAI Layer (Python FastAPI)"]
+        ML_API["FastAPI Microservice (:8001)"]
+        Cache["In-Memory Model & Feature Cache"]
+        Model["Hybrid Forecaster\n(XGBoost + Temporal Trend)"]
+        SHAP["TreeSHAP Attribution Engine"]
+        Jinja["Deterministic Narrative Engine"]
+        Outlier["Mahalanobis Distance Validator"]
     end
 
-    subgraph Storage ["Data Assets & Artifacts"]
-        Raw_CSV["M1 Raw Monthly CSV (2000-2024)"]
-        Live_CSV["Live Months Extension CSV (2025+)"]
-        Model_PKL["Serialized Weights (m1lite_v0.2.0.pkl)"]
+    subgraph Storage ["Dataset & Model Artifacts"]
+        Data_Raw["Historical Dataset (2000-2024)"]
+        Data_Live["Live Extension Store (2025+)"]
+        Model_Weights["Serialized Weights (.pkl / .joblib)"]
     end
 
-    %% Connections
-    Tier1 <-->|HTTP / REST JSON| API_Gateway
-    API_Gateway <-->|HTTP Proxy / REST| ML_API
-    API_Gateway --> Rules_Engine
-    API_Gateway --> DB_Repo
-    DB_Repo -.->|Optional Connection| PG_DB
-    API_Gateway -.->|Fallback when DB offline| Store_Fallback
+    %% Interactions
+    Client <-->|REST API / JSON| Gateway
+    Gateway <-->|HTTP Proxy / REST| ML_API
+    Gateway --> Rules
+    Gateway --> Storage_Mgr
 
-    ML_API --> Model_Cache
-    Model_Cache --> M1_Lite
-    M1_Lite --> TreeSHAP
-    M1_Lite --> Rationale_Engine
-    M1_Lite --> Mahalanobis
+    Storage_Mgr -.->|When Connected| Postgres
+    Storage_Mgr -.->|Fallback / Zero-DB| LocalStore
 
-    M1_Lite -.-> Model_PKL
-    M1_Lite -.-> Raw_CSV
-    M1_Lite -.-> Live_CSV
+    ML_API --> Cache
+    Cache --> Model
+    Model --> SHAP
+    Model --> Jinja
+    Model --> Outlier
 
-    classDef client fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
-    classDef server fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
-    classDef ml fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
-    classDef data fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
+    Model -.-> Model_Weights
+    Model -.-> Data_Raw
+    Model -.-> Data_Live
 
-    class UI_Nav,UI_Overview,UI_Drivers,UI_Rationale,UI_WhatIf,UI_GoalSeek,UI_Rules,UI_Live client;
-    class API_Gateway,Rules_Engine,Store_Fallback,DB_Repo,PG_DB server;
-    class ML_API,Model_Cache,M1_Lite,TreeSHAP,Rationale_Engine,Mahalanobis ml;
-    class Raw_CSV,Live_CSV,Model_PKL data;
+    classDef cLayer fill:#e3f2fd,stroke:#1565c0,stroke-width:2px;
+    classDef bLayer fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px;
+    classDef mLayer fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+    classDef sLayer fill:#fff3e0,stroke:#e65100,stroke-width:2px;
+
+    class UI_Nav,UI_Forecast,UI_Chart,UI_Narrative,UI_Simulator,UI_GoalSeek,UI_Rules,UI_Live cLayer;
+    class Gateway,Rules,Storage_Mgr,Postgres,LocalStore bLayer;
+    class ML_API,Cache,Model,SHAP,Jinja,Outlier mLayer;
+    class Data_Raw,Data_Live,Model_Weights sLayer;
 ```
 
 ---
 
-### 3.2 Data Flow & Inference Pipeline
+### 3.2 Data Flow & Processing Pipeline
 
-When a user requests an explanation or triggers a scenario, the system executes a coordinated multi-phase pipeline across services:
+The following sequence diagram illustrates the coordinated workflow when generating an explained forecast or evaluating an interactive scenario:
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor User as Export Planner / Analyst
-    participant React as React 18 Frontend (:5174)
-    participant Node as Express Backend (:4000)
-    participant Python as FastAPI ML Service (:8001)
-    participant Model as M1-Lite & TreeSHAP
-    participant DB as Storage / Database
+    actor User as Operational Planner
+    participant Web as Web Dashboard (React)
+    participant Gateway as API Gateway (Express)
+    participant ML as ML Service (FastAPI)
+    participant Engine as Model & TreeSHAP
+    participant DB as Storage (Database / File)
 
-    User->>React: Select Origin Month (e.g., "2024-03")
-    React->>Node: GET /api/explain?origin=2024-03
-    Node->>Python: GET /explain?origin=2024-03
-    Python->>Model: Execute Forecast & TreeSHAP Attributions
-    Model-->>Python: Return Prediction, Features, Raw SHAP & Calibration
-    Python->>Python: Group 17 Features into 7 Business Drivers
-    Python->>Python: Render Jinja2 Natural Language Rationale Template
-    Python-->>Node: Return Forecast Payload + SHAP Values + Narrative
-    Node->>Node: Evaluate 15 Business Rules against Context & Calibration
-    Node->>DB: Log Analysis Run (Audit Trail)
-    Node-->>React: Unified JSON: Forecast, Intervals, SHAP, Rationale, Rules
-    React->>User: Render Interactive Visual Dashboard & Metric Cards
+    User->>Web: Select origin month or adjust scenario slider
+    Web->>Gateway: GET /api/explain?origin=YYYY-MM
+    Gateway->>ML: GET /explain?origin=YYYY-MM
+    ML->>Engine: Run hybrid forecast & compute TreeSHAP values
+    Engine-->>ML: Return prediction, feature values, and raw attributions
+    ML->>ML: Aggregate features into 7 business driver groups
+    ML->>ML: Render natural language business narrative
+    ML-->>Gateway: Return forecast, intervals, SHAP values, and narrative
+    Gateway->>Gateway: Evaluate 15 decision rules against calibration thresholds
+    Gateway->>DB: Log session run and parameters
+    Gateway-->>Web: Return combined payload (Forecast + Explanations + Rules)
+    Web->>User: Display visual charts, narrative, and operational advice
 ```
 
 ---
 
-### 3.3 Mathematical Formulation & SHAP Additivity
+### 3.3 Mathematical Formulation & Attribution Identity
 
-The core forecaster utilizes a hybrid blend combining a non-linear tree ensemble with a parametric temporal trend model:
+The primary forecaster implements a hybrid blend combining non-linear gradient-boosted decision trees with a parametric temporal trend model:
 
 $$\hat{y}_{t+1} = (1 - w) \cdot \hat{y}_{\text{XGB}} + w \cdot \hat{y}_{\text{temporal}}$$
 
 Where:
-* $w = 0.7$ is the fixed optimal temporal blend weight selected during walk-forward validation (minimizing validation MAE).
-* $\hat{y}_{\text{XGB}}$ represents the prediction of an ensemble of 100 shallow XGBoost trees (max depth 3, learning rate 0.05).
-* $\hat{y}_{\text{temporal}}$ captures long-term structural momentum and annual seasonality.
+* $w = 0.7$ is the fixed blend weight determined via walk-forward cross-validation.
+* $\hat{y}_{\text{XGB}}$ represents the output of 100 shallow XGBoost trees (max depth 3, learning rate 0.05).
+* $\hat{y}_{\text{temporal}}$ captures underlying structural trend and annual seasonality.
 
-#### Exact TreeSHAP Additive Reconciliation
-A critical scientific contribution of this architecture is **exact mathematical attribution preservation**. Using Lundberg et al.'s TreeSHAP algorithm, the non-linear XGBoost prediction is decomposed into additive local feature contributions $\phi_i$:
+#### Exact TreeSHAP Reconciliation
+Using the TreeSHAP algorithm, the non-linear XGBoost prediction is decomposed into additive feature contributions $\phi_i$:
 
 $$\hat{y}_{\text{XGB}} = \phi_0 + \sum_{i=1}^{M} \phi_i$$
 
-Substituting into the blended equation yields the **complete M3 attribution identity**:
+Substituting into the hybrid equation yields the complete attribution identity:
 
 $$\text{Forecast} = \underbrace{(1 - w) \cdot \phi_0}_{\text{Adjusted Base Value}} + \sum_{i=1}^{M} \underbrace{(1 - w) \cdot \phi_i}_{\text{Adjusted Feature Attribution}} + \underbrace{w \cdot \hat{y}_{\text{temporal}}}_{\text{Explicit Temporal Term}}$$
 
 This guarantees:
 $$\left| \text{Forecast} - \left( (1 - w)\phi_0 + \sum_{i=1}^M (1 - w)\phi_i + w \cdot \hat{y}_{\text{temporal}} \right) \right| < 10^{-5} \text{ mn kg}$$
 
-Every single forecast displayed in the UI is mathematically checked against this tolerance. The reconciliation status is passed directly to the frontend and verified on every render.
+Every forecast is verified against this identity to ensure zero mathematical leakage.
 
 ---
 
-## 4. Core Subsystems & Innovations
+## 4. Core Platform Capabilities
 
-### 4.1 Explainable AI Engine (TreeSHAP + 7 Driver Groups)
+### 4.1 Explainable AI with TreeSHAP
 
-Raw machine learning models output attributions across dozens of technical features (e.g., `tea_export_mn_kg_lag1`, `tea_export_mn_kg_lag2`, `usd_lkr_pct_chg_3m`, `oni_anomaly_diff`). Presenting technical lag variables directly to business executives causes cognitive overload.
+Rather than presenting raw, low-level technical lag variables (e.g., `export_lag1`, `usd_lkr_pct_chg_3m`), the platform groups 17 individual features into **seven business-relevant driver categories**:
 
-Component M3 groups 17 low-level features into **7 Domain-Meaningful Business Drivers**:
+1. **Recent Export Momentum:** Trailing 3-month export performance and short-term trends.
+2. **Annual Seasonality:** Calendar month patterns and seasonal crop flush cycles.
+3. **USD/LKR Exchange Rate:** Currency strength, short-term percentage shifts, and volatility.
+4. **Colombo Auction Prices:** National average, high-elevation, and low-elevation auction values.
+5. **Rainfall & Weather Anomalies:** Key plantation precipitation levels and deviation from historical norms.
+6. **Oceanic Niño Index (ONI):** Sea surface temperature anomalies indicating El Niño / La Niña events.
+7. **Global Buyer Demand Index (BDI):** Trade partner GDP-weighted tea import demand proxy.
 
-```mermaid
-classDiagram
-    class BusinessDriverGroups {
-        +Recent export momentum (3 lags, rolling mean)
-        +Annual seasonality (Month indicator, cycle)
-        +USD/LKR exchange rate (Spot, 3m change, volatility)
-        +Colombo auction price (High, Medium, Low elevation averages)
-        +Rainfall & weather patterns (Precipitation anomaly, dry spells)
-        +Oceanic Niño Index (ENSO / Sea-surface temperature)
-        +Global Buyer Demand Index (BDI proxy, GDP growth)
-    }
-```
-
-* **Waterfall & Directional Impact:** Visualizes positive drivers (expanding export potential) in green and negative drivers (suppressing volume) in amber/red.
-* **Global vs. Local Feature Importance:** Supports inspection of what drove the overall model historically versus what drives the specific selected month.
+* **Waterfall Visualizations:** Displays positive drivers (increasing exports) and negative drivers (suppressing volume) in intuitive horizontal bar charts.
+* **Global vs. Local Analysis:** Supports inspecting both overall model behavior across decades and month-specific attributions.
 
 ---
 
 ### 4.2 Natural Language Business Rationale
 
-While charts explain *how much* a variable contributed, decision-makers require narrative prose for executive memos. The system features a deterministic, hallucination-free Jinja2 natural language engine.
+To support executive decision-making, the system includes a deterministic template engine that translates mathematical attributions into concise English narratives.
 
-#### Sample Generated Rationale:
-> *"The forecast for **April 2024** projects **22.84 million kg** (80% confidence interval: 20.44 to 25.57 mn kg). This represents an expected increase of +4.2% over the previous 3-month trailing average. The upward movement is predominantly propelled by favorable **USD/LKR exchange rate competitiveness** (+0.42 mn kg) and strong **seasonal harvest flush** (+0.31 mn kg), which offset minor headwinds from **below-average Western elevation rainfall** (-0.18 mn kg). All model components agree within normal validation bounds."*
+#### Example Output:
+> *"The forecast for **April 2024** projects **22.84 million kg** (80% confidence interval: 20.44 to 25.57 mn kg), reflecting a +4.2% increase over the trailing 3-month average. The projected increase is primarily driven by favorable **USD/LKR exchange rate competitiveness** (+0.42 mn kg) and strong **seasonal harvest flush** (+0.31 mn kg), offset by minor headwinds from **below-average Western elevation rainfall** (-0.18 mn kg). All model components agree within normal validation bounds."*
 
 ---
 
 ### 4.3 Counterfactual What-If Scenario Simulator
 
-Export planners can test hypothetical economic and climatic conditions in real time using intuitive slider controls:
+Planners can simulate alternative market scenarios using interactive sliders:
 
-```
-[ Rainfall (mm) ]            ◀━━━━━●━━━━━━━━━▶  185 mm    (Baseline: 220 mm)
-[ USD/LKR Exchange Rate ]    ◀━━━━━━━━━━━●━━━▶  335 LKR   (Baseline: 310 LKR)
-[ Colombo Auction Price ]    ◀━━━━━━━●━━━━━━━▶  1,250 LKR (Baseline: 1,220 LKR)
-```
-
-#### Strict Guardrails & Safety Mechanisms:
-1. **Physical Bounds Enforcement:** Sliders are locked to the historical 5th–95th percentile ranges. Extreme, physically impossible values (e.g., negative rainfall) are rejected with HTTP 422.
-2. **Dependent Feature Propagation:** When a raw driver (e.g., `usd_lkr`) is modified, all dependent variables (e.g., percentage changes, 3-month ratios, USD price conversions) are recalculated before re-running inference.
-3. **Immutability of Baseline:** Simulations run in isolated memory spaces; the true historical baseline is never mutated.
+* **Input Safety Guardrails:** Sliders are bounded by historical 5th–95th percentile ranges to prevent impossible combinations. Values outside physical limits are rejected with HTTP 422.
+* **Dependent Feature Recalculation:** Adjusting a primary variable (e.g., `usd_lkr`) automatically recomputes all derived features (percentage changes, moving averages, and dollar-converted auction values) before re-running inference.
+* **Baseline Preservation:** Scenarios run in isolated memory spaces, preserving original baseline forecasts.
 
 ---
 
-### 4.4 Target Goal-Seek Optimizer
+### 4.4 Target Goal-Seek Optimization
 
-Rather than guessing input values, planners can ask:  
-> *"What USD/LKR exchange rate or rainfall level would be required to achieve an export volume of 25.0 million kg next month?"*
+Planners can perform reverse scenario analysis by defining a target volume:
+> *"What USD/LKR exchange rate or rainfall level is needed to reach an export volume of 25.0 million kg next month?"*
 
-The Goal-Seek engine executes a constrained grid-search across the valid 5th–95th percentile domain of the target driver, recalculates all dependent features, and returns:
+The Goal-Seek engine runs a bounded grid search across the selected driver's valid historical domain, updates all dependent features, and returns:
 * The closest achievable volume
-* The required driver setting
-* Percentage shift from the baseline
-* One-click "Apply to Simulator" button to inspect the full counterfactual profile
+* The required driver value
+* Percentage variance from baseline
+* An instant "Apply to Simulator" button
 
 ---
 
-### 4.5 Business Decision Rules Catalogue (15 Rules)
+### 4.5 Domain Decision Rules & Governance (15 Rules)
 
-Predictions must never operate without operational governance. Component M3 includes 15 deterministic business rules grouped into 5 families:
+The system continuously evaluates 15 deterministic business rules grouped into five functional categories:
 
-| Rule ID | Family | Severity | Trigger Condition | Operational Advisory Action |
+| Rule ID | Category | Severity | Trigger Threshold | Operational Advisory Action |
 |---|---|---|---|---|
-| `FORECAST_ABOVE_RECENT` | Direction | **Review** | Forecast > 80th percentile of historical 3-month rise | Verify stock availability & vessel booking quotas |
-| `FORECAST_BELOW_RECENT` | Direction | **Review** | Forecast < 20th percentile of historical 3-month drop | Review warehouse holding costs and forward orders |
-| `ABOVE_LAST_YEAR` | Direction | **Info** | YoY growth > 80th percentile of historical YoY changes | Confirm buyer contracts reflect significant expansion |
-| `BELOW_LAST_YEAR` | Direction | **Info** | YoY drop > 20th percentile of historical YoY changes | Investigate destination market trade barriers |
-| `WIDE_INTERVAL` | Uncertainty | **Caution** | 80% interval width > 25% of point forecast | Avoid committing fixed-volume penalty contracts |
-| `BRANCH_DISAGREEMENT` | Uncertainty | **Caution** | \|XGBoost - Temporal\| > 90th percentile validation gap | Dual models diverge; apply qualitative market judgment |
-| `DRIVER_CONCENTRATION` | Explanation | **Review** | Single driver accounts for ≥60% of total movement | Verify driver assumptions (vulnerable to single-point shift) |
-| `MIXED_SIGNALS` | Explanation | **Review** | Both upward & downward drivers exceed 0.25 mn kg | Market forces are conflicting; monitor auction clearance |
-| `DATA_QUALITY` | Data Quality | **Caution** | Inputs contain synthetic series or reconciliation failed | Audit upstream data feed before accepting predictions |
-| `IN_SAMPLE_MONTH` | Data Quality | **Info** | Selected origin falls within model training set (≤2021) | In-sample accuracy is optimistic; use held-out test months |
-| `UNUSUAL_CONDITIONS` | Data Quality | **Caution** | Mahalanobis distance $D^2 > 97.5\text{th}$ percentile | Multi-variable combination is historically unprecedented |
-| `SCENARIO_OUTSIDE_USUAL` | Scenario | **Caution** | Override input lies beyond 5th–95th percentile | Counterfactual extrapolation warning |
-| `SCENARIO_UNUSUAL_COMBO` | Scenario | **Caution** | Override combination exceeds $D^2_{97.5}$ | Drivers adjusted independently create rare market conditions |
-| `SCENARIO_MATERIAL` | Scenario | **Review** | Scenario alters forecast by ≥2.0% | Material operational change; confirm scenario premise |
-| `SCENARIO_NEGLIGIBLE` | Scenario | **Info** | Scenario alters forecast by <0.5% | Model exhibits momentum dominance; driver shift is muted |
+| `FORECAST_ABOVE_RECENT` | Direction | **Review** | Forecast > 80th percentile of 3-month changes | Verify vessel booking quotas and inventory availability |
+| `FORECAST_BELOW_RECENT` | Direction | **Review** | Forecast < 20th percentile of 3-month changes | Review warehouse storage plans and forward orders |
+| `ABOVE_LAST_YEAR` | Direction | **Info** | YoY growth > 80th percentile of historical changes | Confirm buyer contracts reflect significant expansion |
+| `BELOW_LAST_YEAR` | Direction | **Info** | YoY drop > 20th percentile of historical changes | Investigate destination market trade barriers |
+| `WIDE_INTERVAL` | Uncertainty | **Caution** | 80% interval width > 25% of point forecast | Avoid committing fixed-volume penalty agreements |
+| `BRANCH_DISAGREEMENT` | Uncertainty | **Caution** | \|XGBoost - Temporal\| > 90th percentile gap | Dual models diverge; apply qualitative market judgment |
+| `DRIVER_CONCENTRATION` | Explanation | **Review** | Single driver accounts for ≥60% of total movement | Verify driver assumptions (sensitive to single variable) |
+| `MIXED_SIGNALS` | Explanation | **Review** | Both positive & negative drivers exceed 0.25 mn kg | Market drivers conflict; monitor auction clearance rates |
+| `DATA_QUALITY` | Data Quality | **Caution** | Inputs contain synthetic series or reconciliation issue | Audit input data sources before finalizing plans |
+| `IN_SAMPLE_MONTH` | Data Quality | **Info** | Month falls within training set (≤2021) | In-sample performance is optimistic; use held-out test data |
+| `UNUSUAL_CONDITIONS` | Data Quality | **Caution** | Mahalanobis distance $D^2 > 97.5\text{th}$ percentile | Market condition combination is historically rare |
+| `SCENARIO_OUTSIDE_USUAL` | Scenario | **Caution** | Input value lies outside 5th–95th percentile | Counterfactual extrapolation warning |
+| `SCENARIO_UNUSUAL_COMBO` | Scenario | **Caution** | Scenario combination exceeds $D^2_{97.5}$ | Independent driver changes create rare market state |
+| `SCENARIO_MATERIAL` | Scenario | **Review** | Scenario shifts forecast by ≥2.0% | Material operational change; confirm assumptions |
+| `SCENARIO_NEGLIGIBLE` | Scenario | **Info** | Scenario shifts forecast by <0.5% | Model exhibits momentum dominance; change is muted |
 
-#### Expert Review & Consensus Workflow
-Rules are deliberately tagged as `DRAFT` upon system initialization. A dedicated **Rules Review Modal** allows licensed Colombo tea auction brokers and senior export managers to submit structured verdicts (`agree`, `partly`, `disagree`) with suggested rewording. Rules transition to `REVIEWED` only after domain consensus is recorded in the PostgreSQL database.
+* **Expert Governance:** Rules remain marked as `DRAFT` upon initial deployment. An integrated review modal allows industry specialists to submit structured assessments (`agree`, `partly`, `disagree`). Rules transition to `REVIEWED` status once consensus is logged.
 
 ---
 
-### 4.6 Continuous Live Operations & Model Track Record
+### 4.6 Continuous Live Operations & Tracking
 
-Unlike static academic prototypes evaluated solely on frozen benchmarks, this system is engineered for **continuous real-world deployment (2025 and beyond)**:
+The platform supports ongoing operations for current and future months (2025+):
 
 ```mermaid
 stateDiagram-v2
-    [*] --> IngestionModal: Enter New Month Data (e.g. 2025-01)
-    IngestionModal --> Validation: Validate Physical Bounds & Continuity
-    Validation --> Error: Timeline Gap Detected (Missing Month)
-    Error --> IngestionModal: Prompt Correction
-    Validation --> Approved: Strict Continuity Confirmed
-    Approved --> CombinedHistory: Append to Live Extension Store
-    CombinedHistory --> LiveForecast: Trigger Real-Time Forward Forecast
-    LiveForecast --> TrackRecord: Store (Forecast vs Eventual Actual)
-    TrackRecord --> [*]: Running Out-of-Sample MAE Updated
+    [*] --> IngestData: Input New Month Records
+    IngestData --> ValidateTimeline: Check Bounds & Time Continuity
+    ValidateTimeline --> InputError: Missing Month / Invalid Value
+    InputError --> IngestData: Prompt Correction
+    ValidateTimeline --> StoreRecord: Continuity & Bounds Confirmed
+    StoreRecord --> GenerateForecast: Append Month & Run Forward Prediction
+    GenerateForecast --> TrackRecord: Store Forecast vs Realized Outcome
+    TrackRecord --> [*]: Update Rolling Out-of-Sample Accuracy
 ```
 
-* **Timeline Continuity:** Gaps in historical time-series produce corrupt lag features. The system enforces strict continuity (e.g., month `2025-02` cannot be ingested unless `2025-01` exists).
-* **Provenance & Assumed Inputs:** Live entries document source provenance and clearly flag proxy variables (e.g., BDI estimates).
-* **Track-Record Dashboard:** Compares historical out-of-sample forward forecasts against actual realized export volumes, computing a live running MAE.
+* **Timeline Continuity:** Time-series lag calculations require unbroken historical sequences. The ingestion module enforces sequential consistency (e.g., month `2025-02` cannot be added unless `2025-01` is present).
+* **Track-Record Monitoring:** Compares forward forecasts against realized out-of-sample actuals over time, computing a continuous Mean Absolute Error (MAE).
 
 ---
 
 ### 4.7 Dual-Mode Persistence Architecture
 
-To guarantee that the project can be demonstrated seamlessly in vivas, classrooms, or on remote servers without database installation friction, the backend implements **Zero-Dependency Automatic Fallback**:
+The application includes an automated persistence fallback to ensure seamless local operation:
 
 ```mermaid
 flowchart LR
-    Express[Express Backend API]
-    Check{DATABASE_URL\nAvailable?}
-    Postgres[(PostgreSQL 13+\nConnection Pool)]
-    FlatFile[Flat-File Storage Engine\n• live_months.csv\n• live_forecast_log.json]
+    API[Application Backend]
+    Check{Database\nAvailable?}
+    PG[(PostgreSQL Database\nPool)]
+    Local[(Local File Storage\nCSV & JSON)]
 
-    Express --> Check
-    Check -- Yes --> Postgres
-    Check -- No / Disconnected --> FlatFile
+    API --> Check
+    Check -- Yes --> PG
+    Check -- No / Offline --> Local
 ```
 
-If PostgreSQL is running, full relational audit logging is maintained. If PostgreSQL is absent or credentials fail, the application transparently defaults to flat-file storage without throwing crashes or disabling features.
+* When PostgreSQL is running, review audits and session runs are stored in relational tables.
+* If PostgreSQL is not installed or disconnected, the system transparently logs records to local CSV and JSON files without errors or service interruption.
 
 ---
 
 ## 5. Machine Learning Benchmarks & Evaluation
 
-### 5.1 Dataset Specifications & Quality Assurance
+### 5.1 Dataset Specifications & Preprocessing
 
-* **Data Source:** Combined historical monthly Sri Lankan tea export dataset (`M1_combined_monthly_raw.csv`).
-* **Time Span:** January 2000 to December 2024 (300 consecutive monthly records).
-* **Target Feature:** Total Sri Lankan Tea Exports in **million kilograms (mn kg)**, one month ahead ($t+1$).
-* **Data Splits (Time-Series Safe):**
-  * **Training Period:** 2000-01 to 2018-12 (228 months) — Model parameter estimation
-  * **Validation Period:** 2019-01 to 2021-12 (36 months) — Hyperparameter tuning & blend weights
-  * **Held-Out Test Period:** 2022-01 to 2024-12 (35 months) — Zero-leakage out-of-sample evaluation
+* **Data Scope:** 300 consecutive monthly records from January 2000 to December 2024.
+* **Target Variable:** Total Sri Lankan tea exports in **million kilograms (mn kg)**, one month ahead ($t+1$).
+* **Data Splits (Time-Series Partitioning):**
+  * **Training Period:** 2000-01 to 2018-12 (228 months)
+  * **Validation Period:** 2019-01 to 2021-12 (36 months)
+  * **Held-Out Test Period:** 2022-01 to 2024-12 (35 months)
 
-#### Key Data Cleaning & Integrity Operations
-Full documentation available in [`ml_light_model/reports/dataset_qa.md`](file:///c:/Users/Yasas%20Lakmina/Downloads/Compressed/AI-BASED%20DECISION%20SUPPORT%20SYSTEM%20FOR%20SRI%20LANKAN%20TEA%20EXPORT%20OPERATIONS/ml_light_model/reports/dataset_qa.md):
-1. **Unit Reconciliation:** Standardized early records (measured in million kg) and post-2005 records (recorded in kg).
-2. **Duplicate Removal:** Identified and eliminated duplicate calendar months.
-3. **Outlier Correction:** Corrected four anomalous total sums with transcription $10\times$ multiplication errors.
-4. **Rainfall Sentinels:** Replaced meteorological `-999` missing sentinel flags using seasonal interpolation.
-5. **No Lookahead Leakage:** Time-series lag features strictly offset by at least one month ($t \ge 1$).
+#### Data Cleaning Operations
+* Standardized historical unit variations between kilograms and million kilograms.
+* Deduplicated overlapping calendar records.
+* Corrected typographical anomalies in legacy auction totals.
+* Handled meteorological sentinels (`-999`) using seasonal interpolation.
+* Verified that feature engineering introduces zero future lookahead bias.
 
 ---
 
 ### 5.2 Walk-Forward Expanding Window Evaluation
 
-Evaluated using rigorous **walk-forward validation**, where the model is refit at each step using only data prior to the target month:
+Evaluated using expanding-window walk-forward validation on the held-out test set (2022-01 to 2024-12):
 
-#### Held-Out Test Set Performance (2022-01 to 2024-12 | 35 Months):
-
-| Forecasting Model | MAE (mn kg) | RMSE (mn kg) | MAPE (%) | Bias (mn kg) | Theil's U vs. Persistence |
+| Model | MAE (mn kg) | RMSE (mn kg) | MAPE (%) | Bias (mn kg) | Theil's U vs. Persistence |
 |---|---|---|---|---|---|
-| **M1-Lite Hybrid Blend ($w=0.7$)** | **1.828** | **2.300** | **9.69%** | **+0.65** | **1.005** |
-| XGBoost Branch Alone | 1.754 | 2.187 | 9.30% | +0.78 | 0.956 |
-| Temporal Branch Alone | 1.932 | 2.467 | 10.24% | +0.60 | 1.078 |
-| Seasonal Naive Baseline (Same Month Last Year) | 2.603 | 3.365 | 13.87% | +1.21 | 1.470 |
-| Persistence Baseline (Last Month Actual) | 1.813 | 2.289 | 9.77% | +0.14 | 1.000 |
+| **Hybrid Model Blend ($w=0.7$)** | **1.828** | **2.300** | **9.69%** | **+0.65** | **1.005** |
+| XGBoost Component Alone | 1.754 | 2.187 | 9.30% | +0.78 | 0.956 |
+| Temporal Component Alone | 1.932 | 2.467 | 10.24% | +0.60 | 1.078 |
+| Seasonal Naive Benchmark | 2.603 | 3.365 | 13.87% | +1.21 | 1.470 |
+| Persistence Benchmark | 1.813 | 2.289 | 9.77% | +0.14 | 1.000 |
 
-> [!NOTE]
-> The test period (2022–2024) represents the most volatile economic crisis in modern Sri Lankan history (sovereign debt default, fuel shortages, currency devaluation from 200 to 360 LKR/USD). Despite these disruptions, the hybrid model achieves **<10% MAPE** and substantially outperforms the Seasonal Naive benchmark.
-
-#### Prediction Interval Reliability
-* Target Coverage: 80% empirical prediction interval
-* Observed Coverage on Held-Out Test: **74%**
-* Lower / Upper Offset: $[-2.405, +2.732]$ million kg
+* **Interval Reliability:** An empirical 80% prediction interval covers **74%** of evaluated held-out test months during the volatile 2022–2024 macroeconomic crisis period.
 
 ---
 
-### 5.3 Explanation Faithfulness & Stability Metrics
+### 5.3 Explanation Consistency & Stability
 
-From [`ml_light_model/reports/explanation_quality.json`](file:///c:/Users/Yasas%20Lakmina/Downloads/Compressed/AI-BASED%20DECISION%20SUPPORT%20SYSTEM%20FOR%20SRI%20LANKAN%20TEA%20EXPORT%20OPERATIONS/ml_light_model/reports/explanation_quality.json):
-
-* **Additivity Reconciliation:** Maximum observed error across all evaluated months: **$3.91 \times 10^{-6}$ mn kg** (Well within the $0.001$ threshold).
-* **Deterministic Stability:** 100% agreement on top-ranked drivers and sign consistency across repeated perturbations ($\pm 0.5\%$).
-* **Internal Consistency Rate:** 97.2% alignment with established domain agro-economic directional heuristics.
+* **Exact Additivity:** Maximum observed reconciliation error of **$3.91 \times 10^{-6}$ mn kg** across all test periods (well within the $0.001$ threshold).
+* **Deterministic Stability:** 100% agreement on top-ranked drivers and directional signs under input perturbation tests ($\pm 0.5\%$).
+* **Heuristic Alignment:** 97.2% agreement with established domain directional rules.
 
 ---
 
-## 6. Repository File Structure
+## 6. Repository Directory Structure
 
 ```text
-├── RUN_PROJECT.bat                    # One-click Windows setup and project launcher
-├── STOP_PROJECT.bat                   # Clean shutdown script for all ports
-├── run_project.ps1                    # Master PowerShell orchestration & health check script
-├── reset_postgres.ps1                 # PostgreSQL password reset & database bootstrap
-├── generate_backdated_commits.py      # Automated backdated Git commit & branch generator
-│
-├── frontend/                          # React 18 + Vite Web Dashboard
+├── frontend/                          # React 18 + Vite Web Application
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── AddLiveMonthModal.jsx  # Live month data ingestion form with bounds check
-│   │   │   ├── DecisionPrompts.jsx    # Triggered decision rules with evidence popups
-│   │   │   ├── DriverChart.jsx        # Interactive SHAP feature attribution bar chart
-│   │   │   ├── ForecastSummary.jsx    # Primary export forecast card & interval metrics
-│   │   │   ├── GlobalImportance.jsx   # Overall historical feature importance breakdown
-│   │   │   ├── GoalSeek.jsx           # Reverse target volume optimizer tool
-│   │   │   ├── Limitations.jsx        # Research disclosures & assumptions panel
-│   │   │   ├── Rationale.jsx          # Natural language narrative summary display
-│   │   │   ├── RulesReviewModal.jsx   # Broker consensus submission & review modal
-│   │   │   ├── ScenarioComparison.jsx # What-if scenario comparison & delta cards
-│   │   │   ├── Sidebar.jsx            # Grouped origin month selector & service status
-│   │   │   └── TrackRecordModal.jsx   # Out-of-sample forecast vs actual evaluator
-│   │   ├── App.jsx                    # Root application component & state orchestrator
+│   │   │   ├── AddLiveMonthModal.jsx  # Live month ingestion interface
+│   │   │   ├── DecisionPrompts.jsx    # Rule advisory cards & evidence views
+│   │   │   ├── DriverChart.jsx        # Interactive SHAP attribution bar chart
+│   │   │   ├── ForecastSummary.jsx    # Primary forecast card & interval metrics
+│   │   │   ├── GlobalImportance.jsx   # Historical feature importance view
+│   │   │   ├── GoalSeek.jsx           # Reverse target volume calculator
+│   │   │   ├── Limitations.jsx        # Platform disclosures & bounds guide
+│   │   │   ├── Rationale.jsx          # Natural language narrative summary
+│   │   │   ├── RulesReviewModal.jsx   # Expert consensus & governance modal
+│   │   │   ├── ScenarioComparison.jsx # Counterfactual scenario comparison
+│   │   │   ├── Sidebar.jsx            # Month selector & service health status
+│   │   │   └── TrackRecordModal.jsx   # Out-of-sample forecast tracker
+│   │   ├── App.jsx                    # Root state manager & dashboard layout
 │   │   ├── api.js                     # Unified backend REST client
-│   │   ├── format.js                  # Currency, percentage, and metric formatting helpers
-│   │   └── styles.css                 # Custom CSS design system (tokens, glassmorphism)
+│   │   ├── format.js                  # Formatting utilities (units, currency)
+│   │   └── styles.css                 # Custom CSS design system
 │   ├── package.json
 │   └── vite.config.js
 │
-├── backend/                           # Node.js 22 + Express API Orchestrator
+├── backend/                           # Node.js Express API Gateway
 │   ├── database/
-│   │   └── schema.sql                 # PostgreSQL relational schema for rules & studies
+│   │   └── schema.sql                 # PostgreSQL relational schema
 │   ├── scripts/
-│   │   └── initDb.js                  # Database connection test and migration runner
+│   │   └── initDb.js                  # Database connection tester & initializer
 │   ├── src/
 │   │   ├── db/
-│   │   │   └── repository.js          # PostgreSQL database access layer with zero-db fallback
+│   │   │   └── repository.js          # PostgreSQL access layer with fallback
 │   │   ├── routes/
-│   │   │   ├── rules.js               # Decision rules review & retrieval routes
-│   │   │   └── study.js               # TAM empirical evaluation study endpoints
+│   │   │   ├── rules.js               # Decision rules & review endpoints
+│   │   │   └── study.js               # Research study logging routes
 │   │   ├── rules/
-│   │   │   ├── catalogue.js           # 15 domain decision prompt rule definitions
-│   │   │   └── engine.js              # Deterministic rule evaluation engine
-│   │   ├── app.js                     # Express route mounting & middleware setup
-│   │   ├── liveForecastStore.js       # Fallback flat-file forecast logger
-│   │   ├── mlClient.js                # High-speed HTTP client for FastAPI ML service
-│   │   └── server.js                  # Server bootstrap on port 4000
+│   │   │   ├── catalogue.js           # 15 domain decision rule definitions
+│   │   │   └── engine.js              # Deterministic rule evaluation logic
+│   │   ├── app.js                     # Express middleware & route bindings
+│   │   ├── liveForecastStore.js       # Local JSON fallback store
+│   │   ├── mlClient.js                # HTTP client for ML microservice
+│   │   └── server.js                  # Server listener on port 4000
 │   └── tests/
-│       └── test_live_api.test.js      # Integration test suite for backend routes
+│       └── test_live_api.test.js      # Backend integration test suite
 │
-├── ml_service/                        # Python FastAPI XAI & Inference Microservice
+├── ml_service/                        # Python FastAPI Machine Learning Microservice
 │   ├── app/
 │   │   ├── templates/
-│   │   │   ├── forecast_rationale.txt.j2 # Jinja2 baseline natural language template
-│   │   │   └── scenario_rationale.txt.j2 # Jinja2 counterfactual comparison template
-│   │   ├── calibration.py             # Empirical prediction intervals & percentiles
-│   │   ├── explain.py                 # TreeSHAP computation & exact blend additivity
-│   │   ├── main.py                    # FastAPI route handlers (port 8001)
-│   │   ├── rationale.py               # Natural language narrative generation module
-│   │   ├── service.py                 # In-memory model caching & inference manager
-│   │   └── settings.py                # Environment configuration & driver groups
+│   │   │   ├── forecast_rationale.txt.j2 # Jinja2 baseline narrative template
+│   │   │   └── scenario_rationale.txt.j2 # Jinja2 counterfactual template
+│   │   ├── calibration.py             # Empirical prediction intervals
+│   │   ├── explain.py                 # TreeSHAP attribution & additivity verification
+│   │   ├── main.py                    # FastAPI route definitions (port 8001)
+│   │   ├── rationale.py               # Narrative generation module
+│   │   ├── service.py                 # In-memory model caching & inference
+│   │   └── settings.py                # Service configuration & driver definitions
 │   └── requirements.txt
 │
-└── ml_light_model/                    # Standalone M1-Lite Model & Pipeline
+└── ml_light_model/                    # Standalone Model Pipeline & Evaluation
     ├── data/
     │   ├── raw/
-    │   │   └── M1_combined_monthly_raw.csv # Historical monthly tea dataset (2000-2024)
+    │   │   └── M1_combined_monthly_raw.csv # Historical monthly dataset (2000-2024)
     │   ├── processed/                 # Cleaned dataset & feature matrices
-    │   └── live/                      # Ingested live months (2025+)
+    │   └── live/                      # Live extension records (2025+)
     ├── models/
     │   ├── m1lite_v0.2.0.joblib       # Serialized XGBoost model artifacts
     │   └── m1lite_v0.2.0.pkl          # Pickled hybrid forecaster object
     ├── notebooks/
-    │   └── M1_lite_training.ipynb     # Step-by-step training & research EDA notebook
+    │   └── M1_lite_training.ipynb     # Interactive model training notebook
     ├── reports/
-    │   ├── dataset_qa.md              # Complete dataset audit & cleaning log
-    │   ├── explanation_quality.json   # SHAP additivity & stability verification metrics
-    │   └── m1lite_evaluation.md       # Walk-forward benchmark evaluation report
+    │   ├── dataset_qa.md              # Dataset quality assurance report
+    │   ├── explanation_quality.json   # SHAP stability metrics
+    │   └── m1lite_evaluation.md       # Walk-forward benchmark evaluation
     ├── tea_m3/
     │   ├── forecasting/
-    │   │   ├── interface.py           # Core forecaster abstract base class contract
-    │   │   └── m1lite.py              # XGBoost + Linear trend blend model implementation
-    │   ├── config.py                  # Driver configurations & split dates
-    │   ├── data_prep.py               # Raw CSV ingestion & cleaning pipeline
-    │   ├── features.py                # Lag feature engineering & scenario overrides
-    │   └── live_data.py               # Live month validation & ingestion logic
-    └── tests/                         # 35 PyTest unit tests (leakage, SHAP, contract)
+    │   │   ├── interface.py           # Forecaster abstract base class
+    │   │   └── m1lite.py              # XGBoost + Linear trend implementation
+    │   ├── config.py                  # Driver configurations & split parameters
+    │   ├── data_prep.py               # Data ingestion & cleaning pipeline
+    │   ├── features.py                # Lag feature engineering
+    │   └── live_data.py               # Live data validation routines
+    └── tests/                         # Unit tests (data leakage, SHAP additivity)
 ```
 
 ---
 
 ## 7. Installation & Quickstart
 
-### Prerequisites
-* **Python 3.11+** (Ensure *Add python.exe to PATH* is checked during installation)
-* **Node.js 22+ LTS**
-* **Git 2.40+**
-* *(Optional)* **PostgreSQL 13+** (If omitted, system automatically operates in zero-database fallback mode)
+### 7.1 Prerequisites
+* **Python 3.11+**
+* **Node.js 20+ / 22+ LTS**
+* **Git**
+* *(Optional)* **PostgreSQL 13+** (The backend automatically runs in local storage mode if PostgreSQL is not installed)
 
 ---
 
-### 7.1 One-Click Windows Setup (Recommended)
+### 7.2 Service Setup & Execution
 
-The repository includes a master launcher that handles Python virtual environment creation, pip dependencies, model training, Node packages, and multi-service startup automatically:
+Open three separate terminal windows to run each service:
 
-1. Clone or download the repository to your machine.
-2. Double-click **`RUN_PROJECT.bat`** (or execute in PowerShell):
-
-```powershell
-.\RUN_PROJECT.bat
-```
-
-The launcher will:
-- Check and validate Python and Node.js runtimes.
-- Create `.venv` and install `ml_service` and `ml_light_model` packages.
-- Train the M1-lite forecaster and verify weights (`~13 seconds`).
-- Install Node dependencies for both `backend` and `frontend`.
-- Test PostgreSQL connectivity (or gracefully enable flat-file mode).
-- Launch all three background services and open **`http://localhost:5174`** in your default browser.
-
-To safely shut down all services, double-click **`STOP_PROJECT.bat`**.
-
-#### Dedicated Batch Commands:
-```cmd
-RUN_PROJECT.bat setup     :: Re-install packages and rebuild environment
-RUN_PROJECT.bat start     :: Launch running servers only (skip setup)
-RUN_PROJECT.bat test      :: Execute all 101 unit/integration tests and frontend build check
-RUN_PROJECT.bat retrain   :: Retrain and re-evaluate the M1-lite model from scratch
-```
-
----
-
-### 7.2 Manual Multi-Service Setup
-
-If running on macOS, Linux, or developing individual services:
-
-#### Step 1: Start the ML Service (FastAPI)
+#### Terminal 1: Machine Learning Service (FastAPI)
 ```bash
-# From workspace root
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-pip install -r ml_service/requirements.txt
-pip install -r ml_light_model/requirements.txt
-
-# Run FastAPI server
 cd ml_service
+
+# Create and activate a virtual environment
+python -m venv .venv
+
+# On Windows:
+.venv\Scripts\activate
+# On macOS / Linux:
+source .venv/bin/activate
+
+# Install dependencies and start the service
+pip install -r requirements.txt
+pip install -r ../ml_light_model/requirements.txt
 uvicorn app.main:app --host 127.0.0.1 --port 8001 --reload
 ```
+*The Machine Learning Service will run at `http://localhost:8001`.*
 
-#### Step 2: Start the Backend Gateway (Express)
+#### Terminal 2: Application Gateway Backend (Express)
 ```bash
 cd backend
+
+# Install dependencies and start server
 npm install
 npm start
-# Server starts on http://localhost:4000
 ```
+*The Backend API Gateway will run at `http://localhost:4000`.*
 
-#### Step 3: Start the Frontend UI (React + Vite)
+#### Terminal 3: Web Dashboard Frontend (React + Vite)
 ```bash
 cd frontend
+
+# Install dependencies and start development server
 npm install
 npm run dev
-# Dashboard available on http://localhost:5174
+```
+*Open `http://localhost:5174` in your web browser to access the dashboard.*
+
+---
+
+### 7.3 Model Retraining & Evaluation
+
+To inspect or retrain the forecasting model independently:
+
+```bash
+cd ml_light_model
+pip install -r requirements.txt
+
+# Run model test suite
+python -m pytest tests/
+
+# Evaluate explanation stability and additivity metrics
+python scripts/evaluate_explanations.py
 ```
 
 ---
 
 ## 8. REST API Reference
 
-### 8.1 ML Service (FastAPI - Port 8001)
+### 8.1 Machine Learning Service (FastAPI - Port 8001)
 
 | Method | Endpoint | Description |
 |---|---|---|
-| `GET` | `/health` | Service health status, model version (`v0.2.0`), and live month count |
-| `GET` | `/origins` | Lists available origin months classified into `live`, `held_out`, or `in_sample` |
-| `GET` | `/explain?origin=YYYY-MM` | Baseline forecast, exact TreeSHAP values, driver groups, and rationale narrative |
-| `POST` | `/scenario` | Simulates counterfactual driver overrides and calculates deltas against baseline |
-| `POST` | `/goal-seek` | Searches driver domain to identify setting achieving desired target volume |
-| `GET` | `/live/months` | Retrieves all ingested live extension records |
-| `POST` | `/live/months` | Validates and ingests new actual month with physical bounds verification |
-| `DELETE` | `/live/months/latest` | Safely removes latest live month to preserve timeline continuity |
+| `GET` | `/health` | Returns service health, model identifier (`v0.2.0`), and live month count |
+| `GET` | `/origins` | Lists available origin months (`live`, `held_out`, `in_sample`) |
+| `GET` | `/explain?origin=YYYY-MM` | Computes forecast, exact TreeSHAP values, driver groups, and rationale text |
+| `POST` | `/scenario` | Evaluates driver overrides and computes variance from baseline |
+| `POST` | `/goal-seek` | Searches driver domain to identify setting matching target volume |
+| `GET` | `/live/months` | Returns all ingested live records |
+| `POST` | `/live/months` | Ingests a new month record with strict bounds and continuity checks |
+| `DELETE` | `/live/months/latest` | Removes the latest live month |
 
 #### Sample Scenario Request Payload (`POST /scenario`):
 ```json
@@ -634,131 +594,63 @@ npm run dev
 
 ---
 
-### 8.2 Orchestration Backend (Express - Port 4000)
+### 8.2 Application Gateway Backend (Express - Port 4000)
 
 | Method | Endpoint | Description |
 |---|---|---|
-| `GET` | `/api/origins` | Retrieves valid origin months grouped by dataset phase |
-| `GET` | `/api/explain?origin=YYYY-MM` | Complete dashboard payload: ML inference + 15-rule evaluation |
-| `GET` | `/api/explain?origin=YYYY-MM&interactive=1&<driver>=<val>` | Evaluates counterfactual scenario with triggered rule adjustments |
-| `POST` | `/api/goal-seek` | Reverse scenario optimization endpoint |
-| `GET` | `/api/rules` | Retrieves all 15 decision rules, current review counts, and statuses |
+| `GET` | `/api/origins` | Returns available origin months grouped by dataset split |
+| `GET` | `/api/explain?origin=YYYY-MM` | Core endpoint: aggregated ML predictions and 15-rule evaluation |
+| `GET` | `/api/explain?origin=YYYY-MM&interactive=1&<driver>=<val>` | Evaluates counterfactual scenario with updated rule checks |
+| `POST` | `/api/goal-seek` | Reverse scenario search endpoint |
+| `GET` | `/api/rules` | Retrieves all 15 decision rules, current review counts, and status |
 | `POST` | `/api/rules/:ruleId/reviews` | Submits domain expert review (`agree`, `partly`, `disagree`) |
-| `GET` | `/api/live/track-record` | Compares historical forward forecasts against realized out-of-sample actuals |
-| `POST` | `/api/live/months` | Secured ingestion endpoint for live monthly data |
+| `GET` | `/api/live/track-record` | Returns historical forward predictions versus realized actuals |
+| `POST` | `/api/live/months` | Secured ingestion endpoint for live monthly records |
 
 ---
 
-## 9. Testing & Quality Assurance
+## 9. Quality Assurance & Automated Testing
 
-The codebase includes an exhaustive test suite covering data integrity, algorithmic constraints, API contracts, and user interface builds:
+The codebase includes automated test suites covering data integrity, algorithmic constraints, API contracts, and user interface builds:
 
 ```mermaid
-pie title Total 101 Test Distribution
-    "ML & Leakage Tests (PyTest)" : 35
-    "Backend & Integration Tests (Node)" : 30
-    "XAI Faithfulness & Stability Tests" : 20
-    "Contract & Live Data Tests" : 16
+pie title Automated Test Distribution (101 Total Tests)
+    "Machine Learning & Data Leakage Tests" : 35
+    "Backend & Integration Tests" : 30
+    "XAI Consistency & Stability Tests" : 20
+    "Contract & Live Ingestion Tests" : 16
 ```
 
-### Running All Tests:
+### Running Test Suites:
+
 ```bash
-# Using the Windows launcher:
-RUN_PROJECT.bat test
+# 1. Run Python unit and leakage tests
+python -m pytest ml_light_model/tests/
 
-# Or manually:
-python -m pytest ml_light_model/tests/      # 35 tests
-node --test backend/tests/test_live_api.test.js # Backend integration tests
-cd frontend && npm run build                # Vite bundle production verification
+# 2. Run Backend API integration tests
+cd backend && node --test tests/test_live_api.test.js
+
+# 3. Verify Frontend production build
+cd frontend && npm run build
 ```
 
-### Verification Criteria Enforced in CI/Tests:
-- **No Lookahead Leakage:** Features for month $t$ strictly prohibit references to month $t+1$.
-- **SHAP Additivity Invariant:** Forecast must equal the sum of base value, feature attributions, and temporal term ($<10^{-5}$ error).
-- **Driver Override Isolation:** Adjusting scenario inputs must never mutate baseline historical objects.
-- **Physical Bounds Validation:** Out-of-bounds inputs (e.g. negative rainfall, negative prices) trigger immediate HTTP 422 errors.
+---
+
+## 10. Technical Limitations & Disclosures
+
+1. **Step-Function Sensitivity:** Gradient-boosted decision trees partition feature space using orthogonal splits. Consequently, minor adjustments to continuous sliders may show zero change until a split threshold is crossed. The UI explicitly alerts users when model sensitivity is negligible.
+2. **Pre-2013 Currency Series:** Historical USD/LKR exchange rates prior to 2013 include interpolated series in the raw data. This is flagged by the Data Quality rule family (`DATA_QUALITY`).
+3. **Attribution vs. Causality:** SHAP values represent statistical feature contributions within the model rather than strict macroeconomic causality. Prompts are intentionally structured as advisory recommendations (*"Consider reviewing..."*) rather than automated directives.
 
 ---
 
-## 10. Viva Presentation & Demonstration Walkthrough
+## 11. License & Usage Terms
 
-When presenting this project during an academic viva or stakeholder demonstration, follow this 5-minute structured workflow:
-
-```mermaid
-journey
-    title 5-Minute Viva Demonstration Flow
-    section 1. Baseline Explanation
-      Select Held-Out Month (e.g. 2024-03): 5: Presenter
-      Inspect SHAP Driver Waterfall: 5: Examiner
-      Read Generated Natural Language Rationale: 5: Examiner
-    section 2. Counterfactual Simulation
-      Adjust USD/LKR Slider from 310 to 340: 5: Presenter
-      Demonstrate Real-Time Delta (+0.42 mn kg): 5: Examiner
-      Trigger Goal-Seek for 25.0 mn kg: 5: Presenter
-    section 3. Decision Governance
-      Show Triggered Rule (FORECAST_ABOVE_RECENT): 5: Presenter
-      Open Evidence Modal & Review Status: 5: Examiner
-    section 4. Live Forward Operations
-      Open Live Ingestion Modal: 5: Presenter
-      Demonstrate Bounds Check & Ingest New Month: 5: Examiner
-      Inspect Out-of-Sample Track Record: 5: Examiner
-```
-
-1. **Step 1: Baseline Explanation & Rationale**
-   - In the sidebar, select a held-out test month (e.g., `2024-03`).
-   - Point out the forecast card (`22.84 mn kg`), the 80% interval band, and the active model version.
-   - Show the **SHAP Driver Chart**: highlight how Western elevation rainfall and USD/LKR exchange rates actively contributed to the prediction.
-   - Point to the **Natural Language Rationale panel**: demonstrate that the text is automatically generated and reconciles with the visual chart.
-
-2. **Step 2: Interactive What-If Scenario Simulation**
-   - Click the **What-If Simulation** tab.
-   - Move the **USD/LKR exchange rate slider** from 310 to 340 LKR.
-   - Point out that the forecast recalculates instantly, showing the net volume increase.
-   - Explain the safety mechanism: sliders are locked between the 5th and 95th percentiles so users cannot simulate unrealistic conditions.
-
-3. **Step 3: Goal-Seek Optimization**
-   - Enter a target export volume (e.g., `25.0 million kg`).
-   - Select `USD/LKR exchange rate` as the target variable.
-   - Click **Find Required Value**. Explain how the grid search algorithm identifies the exact exchange rate required and allows one-click transfer into the simulation view.
-
-4. **Step 4: Operational Governance & Decision Rules**
-   - Scroll down to the **Decision Prompts** section.
-   - Click on the triggered prompt (`Forecast notably above recent months`).
-   - Show the **"Why this prompt?"** evidence panel: show the exact trigger threshold (80th percentile of historical changes), the underlying rule ID, and the explicit limitation disclaimer.
-   - Open the **Rules Review Modal** to demonstrate the domain expert consensus mechanism for Colombo tea auction brokers.
-
-5. **Step 5: Live Month Ingestion & Track Record**
-   - Click **"Add Live Month"** in the top navigation.
-   - Show the physical bounds validation (e.g., entering negative rainfall throws an immediate validation error).
-   - Ingest an actual month and open the **Live Track-Record Modal** to show the out-of-sample forward evaluation comparison (forecast vs realized outcome).
-
----
-
-## 11. Research Limitations & Governance
-
-In adherence to SLIIT academic integrity and scientific transparency standards, the system documents all operational limitations directly in the UI and codebase:
-
-1. **Weak Driver Sensitivity in Step Ensembles:** Because tree-based models split along orthogonal axes, minor adjustments to continuous sliders may occasionally show zero delta until a split threshold is crossed. The UI explicitly notifies users when model sensitivity is negligible.
-2. **Synthetic Data Disclosures:** The historical exchange rate series prior to 2013 contains synthetic interpolations in the raw dataset. The system flags this in the Data Quality rule family (`DATA_QUALITY`).
-3. **Attribution vs. Causality:** SHAP values measure feature importance within the predictive model, not absolute real-world macroeconomic causality. Prompts are deliberately phrased as soft suggestions (*"Consider reviewing..."*) rather than prescriptive instructions.
-4. **Research Ethics (TAM Study Mode):** The codebase includes a complete Technology Acceptance Model (TAM) user study harness (`/api/study/*`). In accordance with institutional research ethics, this mode is **locked by default** (`STUDY_MODE_ENABLED=false`) until formal ethical clearance is granted.
-
----
-
-## 12. License & Disclaimers
-
-### Academic Disclaimer
-This software was developed solely for academic research, education, and examination purposes as part of the SLIIT IT4010 Capstone Project (Project J26-IT-423). Forecasts and scenario simulations generated by this prototype should not be used as the sole basis for binding commercial or financial tea export commitments without independent domain verification.
-
-### Author & Contact
-* **Researcher:** D S T W Dassanayake (Yasas Lakmina)
-* **Student Registration ID:** IT23293076
-* **GitHub Repository:** [https://github.com/YasasLakmina/backdate-commit-test](https://github.com/YasasLakmina/backdate-commit-test)
-* **SLIIT Computing:** Sri Lanka Institute of Information Technology, Malabe, Sri Lanka.
+This project is developed for research, educational, and operational decision-support exploration. The software is provided "as is" without warranties of any kind. Forecasts and simulations should be used alongside domain expertise and should not serve as the sole basis for commercial or financial commitments.
 
 ---
 
 <p align="center">
   <b>AI-Based Decision Support System for Sri Lankan Tea Export Operations</b><br>
-  <i>Empowering Pure Ceylon Tea with Explainable, Transparent, and Auditable Artificial Intelligence.</i>
+  <i>Explainable, Transparent, and Auditable Artificial Intelligence for Global Trade.</i>
 </p>
